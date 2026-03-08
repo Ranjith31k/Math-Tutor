@@ -1,0 +1,64 @@
+Using CPU. Note: This module is much faster with a GPU.
+
+=== Sample: D:\AI Math Tutor\ai_math_tutor\samples\eq_1.png
+C:\Users\acer\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\torch\utils\data\dataloader.py:775: UserWarning: 'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.
+  super().__init__(loader)
+OCR raw:
+ 2x + 3 = 7
+Converted LaTeX / expression:
+ 2x + 3 = 7
+Solutions: [2]
+
+=== Sample: D:\AI Math Tutor\ai_math_tutor\samples\eq_2.png
+C:\Users\acer\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\torch\utils\data\dataloader.py:775: UserWarning: 'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.
+  super().__init__(loader)
+OCR raw:
+ X^2 - Sx + 6 = 0
+Converted LaTeX / expression:
+ X^2 - Sx + 6 = 0
+Solutions: [-sqrt(Sx - 6), sqrt(Sx - 6)]
+
+=== Sample: D:\AI Math Tutor\ai_math_tutor\samples\eq_3.png
+OCR raw:
+ (x+2)x-3) = 0
+Converted LaTeX / expression:
+ (x+2)x-3) = 0
+Heuristic sympify failed: Sympify of expression 'could not parse '(x+2)*x-3)'' failed, because of exception being raised:
+SyntaxError: unmatched ')' (<string>, line 1)
+ValueError: Error from parse_expr with transformed code: "(Symbol ('x' )+Integer (2 ))*Symbol ('x' )-Integer (3 ))"
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\acer\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\sympy\core\sympify.py", line 507, in sympify
+    expr = parse_expr(a, local_dict=locals, transformations=transformations, evaluate=evaluate)
+  File "C:\Users\acer\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\sympy\parsing\sympy_parser.py", line 1090, in parse_expr
+    raise e from ValueError(f"Error from parse_expr with transformed code: {code!r}")
+  File "C:\Users\acer\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\sympy\parsing\sympy_parser.py", line 1081, in parse_expr
+    rv = eval_expr(code, local_dict, global_dict)
+  File "C:\Users\acer\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\sympy\parsing\sympy_parser.py", line 905, in eval_expr
+    expr = eval(
+        code, global_dict, local_dict)  # take local objects in preference
+  File "<string>", line 1
+    (Symbol ('x' )+Integer (2 ))*Symbol ('x' )-Integer (3 ))
+                                                           ^
+SyntaxError: unmatched ')'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\AI Math Tutor\ai_math_tutor\solver\equation_solver.py", line 52, in parse_latex_to_sympy
+    left = sympify(left_s.strip())
+  File "C:\Users\acer\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\sympy\core\sympify.py", line 509, in sympify
+    raise SympifyError('could not parse %r' % a, exc)
+sympy.core.sympify.SympifyError: Sympify of expression 'could not parse '(x+2)*x-3)'' failed, because of exception being raised:
+SyntaxError: unmatched ')' (<string>, line 1)
+Parsing/solving failed: Sympify of expression 'could not parse '(x+2)*x-3)'' failed, because of exception being raised:
+SyntaxError: unmatched ')' (<string>, line 1)
+
+=== Sample: D:\AI Math Tutor\ai_math_tutor\samples\eq_4.png
+OCR raw:
+ 12 X^2 - 3x + 2 = 0
+Converted LaTeX / expression:
+ 12 X^2 - 3x + 2 = 0
+Solutions: [1/8 - sqrt(87)*I/24, 1/8 + sqrt(87)*I/24]

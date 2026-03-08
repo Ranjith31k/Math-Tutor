@@ -1,0 +1,23 @@
+You are an expert math tutor. Your task is to provide a step-by-step solution for the following algebraic equation.
+
+Equation (in LaTeX):
+<<EQUATION>>
+
+Rules:
+1. Break down the solution into logical, sequential steps.
+2. For each step, provide a brief textual explanation and the resulting LaTeX expression for that step.
+3. Format your output as a JSON list of objects, where each object has 'explanation' and 'result_latex' keys.
+4. Ensure the final step gives the exact solution.
+5. Do NOT wrap the JSON in markdown code blocks, just return raw JSON text.
+
+Example format:
+[
+  {
+    "explanation": "Subtract 3 from both sides",
+    "result_latex": "2x = 4"
+  },
+  {
+    "explanation": "Divide both sides by 2",
+    "result_latex": "x = 2"
+  }
+]

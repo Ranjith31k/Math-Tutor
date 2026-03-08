@@ -1,0 +1,14 @@
+streamlit>=1.20.0
+numpy
+Pillow
+opencv-python-headless
+easyocr
+pytesseract
+sympy
+antlr4-python3-runtime
+openai
+opencv-contrib-python-headless
+
+requests
+python-dotenv
+google-generativeai
